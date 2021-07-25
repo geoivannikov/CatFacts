@@ -7,6 +7,7 @@ target 'CatFacts' do
 
   pod 'SnapKit'
   pod 'PromiseKit'
+  pod 'SDWebImage'
 
   target 'CatFactsTests' do
     inherit! :search_paths
