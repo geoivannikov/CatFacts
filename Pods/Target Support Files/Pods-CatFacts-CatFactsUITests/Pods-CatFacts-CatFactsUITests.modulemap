@@ -1,0 +1,6 @@
+framework module Pods_CatFacts_CatFactsUITests {
+  umbrella header "Pods-CatFacts-CatFactsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
