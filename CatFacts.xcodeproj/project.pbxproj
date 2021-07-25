@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		15F292B2F96576E376DA72E5 /* Pods_CatFacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBE6F76D797E889BD3048F4 /* Pods_CatFacts.framework */; };
 		3739E165DA7DB9589E17C193 /* Pods_CatFactsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E363820331AD320D4809B1 /* Pods_CatFactsTests.framework */; };
 		9CB67C8A26AD8AB9009B6376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB67C8926AD8AB9009B6376 /* AppDelegate.swift */; };
-		9CB67C8C26AD8AB9009B6376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB67C8B26AD8AB9009B6376 /* SceneDelegate.swift */; };
 		9CB67C8E26AD8AB9009B6376 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB67C8D26AD8AB9009B6376 /* ViewController.swift */; };
 		9CB67C9126AD8AB9009B6376 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB67C8F26AD8AB9009B6376 /* Main.storyboard */; };
 		9CB67C9326AD8ABA009B6376 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CB67C9226AD8ABA009B6376 /* Assets.xcassets */; };
@@ -43,7 +42,6 @@
 		7F8A9998C3DE1300BF715540 /* Pods-CatFacts-CatFactsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatFacts-CatFactsUITests.release.xcconfig"; path = "Target Support Files/Pods-CatFacts-CatFactsUITests/Pods-CatFacts-CatFactsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9CB67C8626AD8AB9009B6376 /* CatFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB67C8926AD8AB9009B6376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9CB67C8B26AD8AB9009B6376 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9CB67C8D26AD8AB9009B6376 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9CB67C9026AD8AB9009B6376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CB67C9226AD8ABA009B6376 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 				DA5A471653FF2C5157380D55 /* Pods-CatFactsTests.debug.xcconfig */,
 				BEA28FE51BD54895F1E19D31 /* Pods-CatFactsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -141,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				9CB67C8926AD8AB9009B6376 /* AppDelegate.swift */,
-				9CB67C8B26AD8AB9009B6376 /* SceneDelegate.swift */,
 				9CB67C8D26AD8AB9009B6376 /* ViewController.swift */,
 				9CB67C8F26AD8AB9009B6376 /* Main.storyboard */,
 				9CB67C9226AD8ABA009B6376 /* Assets.xcassets */,
@@ -409,7 +405,6 @@
 			files = (
 				9CB67C8E26AD8AB9009B6376 /* ViewController.swift in Sources */,
 				9CB67C8A26AD8AB9009B6376 /* AppDelegate.swift in Sources */,
-				9CB67C8C26AD8AB9009B6376 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +584,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8JH59DJ45H;
 				INFOPLIST_FILE = CatFacts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -609,6 +605,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8JH59DJ45H;
 				INFOPLIST_FILE = CatFacts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
