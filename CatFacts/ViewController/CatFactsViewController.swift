@@ -12,6 +12,15 @@ import PromiseKit
 //https://i.thatcopy.pw/cat-webp/bvqlvmL.webp
 
 final class CatFactsViewController: UITableViewController {
+    weak var coordinator: MainCoordinator?
+
+    private let viewModel: CatFactsViewModelProtocol
+
+    init(viewModel: CatFactsViewModelProtocol = CatFactsViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
     override func viewDidLoad() {
         setUpLayout()
     }
@@ -48,5 +57,9 @@ final class CatFactsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = CatFactCell()
         return cell
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

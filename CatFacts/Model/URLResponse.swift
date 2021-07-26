@@ -1,5 +1,5 @@
 //
-//  CatImageResponse.swift
+//  URLResponse.swift
 //  CatFacts
 //
 //  Created by George Ivannikov on 26.07.2021.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct CatImageResponse {
+struct URLResponse {
     let url: String
 }
 
-extension CatImageResponse: Decodable { }
+extension URLResponse: Decodable { }
