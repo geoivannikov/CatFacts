@@ -12,7 +12,6 @@ import SnapKit
 final class CatFactCell: UITableViewCell {
     let contentLabel: UILabel = {
         let label = UILabel()
-        label.text = "is simply dummy text of the printing and is simply dummy text of the printing and is simply dummy text of the printing and "
         label.numberOfLines = 0
         return label
     }()

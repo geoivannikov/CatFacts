@@ -8,21 +8,21 @@
 import Foundation
 
 enum APIError: Error {
+    case urlError
     case responseError
     case decodingError
-    case noConnectionError
     case unknownError
 }
 
 extension APIError: LocalizedError {
-    var description: String? {
+    var description: String {
         switch self {
+        case .urlError:
+            return "Incorrect URL"
         case .responseError:
             return "Response error"
         case .decodingError:
             return "Decoding failed"
-        case .noConnectionError:
-            return "No internet connection. Establish connection and relaunch the application"
         case .unknownError:
             return "Unknown error"
         }

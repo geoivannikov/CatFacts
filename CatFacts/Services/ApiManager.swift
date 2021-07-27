@@ -9,12 +9,16 @@ import Foundation
 import PromiseKit
 
 protocol ApiManagerProtocol {
-    func fetchData<T: Decodable>(url: URL) -> Promise<T>
+    func fetchData<T: Decodable>(url: String) -> Promise<T>
 }
 
 final class ApiManager: ApiManagerProtocol {
-    func fetchData<T: Decodable>(url: URL) -> Promise<T> {
+    func fetchData<T: Decodable>(url: String) -> Promise<T> {
         Promise { seal in
+            guard let url = URL(string: url) else {
+                seal.reject(APIError.urlError)
+                return
+            }
             URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
                 guard let data = data,
                       let httpResponse = response as? HTTPURLResponse, 200...299 ~= httpResponse.statusCode else {
@@ -27,7 +31,7 @@ final class ApiManager: ApiManagerProtocol {
                 } catch {
                     seal.reject(APIError.decodingError)
                 }
-            }
+            }.resume()
         }
     }
 }
