@@ -9,5 +9,4 @@ import Foundation
 
 struct Environment {
     var apiManager: ApiManagerProtocol = ApiManager()
-    var reachabilityService: ReachabilityServiceProtocol = ReachabilityService()
 }

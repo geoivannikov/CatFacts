@@ -20,4 +20,10 @@ final class MainCoordinator {
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: false)
     }
+    
+    func presentError(error: APIError) {
+        let alert = UIAlertController(title: "Error", message: error.description, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        navigationController.present(alert, animated: true)
+    }
 }
