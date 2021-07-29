@@ -11,4 +11,5 @@ import UIKit
 struct TableRow {
     let identifier: String
     let type: UITableViewCell.Type
+    let size: Int
 }

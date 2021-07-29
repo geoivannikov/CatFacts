@@ -9,6 +9,18 @@ import UIKit
 import SDWebImage
 import PromiseKit
 
+fileprivate enum TableRowIdentifier: String {
+    case catFactRow
+}
+
+fileprivate enum TableSectionIdentifier: String {
+    case catFactSection
+}
+
+fileprivate enum CellIdentifier: String {
+    case catFactCell
+}
+
 final class CatFactsViewController: UITableViewController {
     weak var coordinator: MainCoordinator?
 
@@ -27,6 +39,11 @@ final class CatFactsViewController: UITableViewController {
     }
     private var facts: [String] = [] {
         didSet {
+            let catFactSection = TableSection(identifier: TableSectionIdentifier.catFactSection.rawValue,
+                                              rows: facts.map { _ in TableRow(identifier: TableRowIdentifier.catFactRow.rawValue,
+                                                                              type: CatFactCell.self,
+                                                                              size: 1) })
+            tableModel.sections.append(catFactSection)
             tableView.reloadData()
         }
     }
@@ -70,19 +87,26 @@ final class CatFactsViewController: UITableViewController {
     }
     
     private func setUpTableModel() {
-//        tableModel.cells.append(CellRegister(cellType: CatFactCell.self, cellIdentifier: "CatFactCell"))
-//        let catFactRow = TableRow(identifier: "catFactRow", type: CatFactCell.self)
-//        let catFactSection = TableSection(identifier: "CatFactSection")
+        tableModel.cells.append(CellRegister(cellType: CatFactCell.self, cellIdentifier: CellIdentifier.catFactCell.rawValue))
+        tableModel.registerCells(for: tableView)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        facts.count
+        tableModel.rows(in: section) ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = CatFactCell()
-        cell.contentLabel.text = facts[indexPath.row]
-        return cell
+        guard let row = tableModel.row(on: indexPath) else {
+            return UITableViewCell()
+        }
+        switch row.identifier {
+        case TableRowIdentifier.catFactRow.rawValue:
+            let cell = CatFactCell()
+            cell.contentLabel.text = facts[indexPath.row]
+            return cell
+        default:
+            return UITableViewCell()
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

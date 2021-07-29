@@ -10,5 +10,5 @@ import Foundation
 
 struct TableSection {
     let identifier: String?
-    let rows: [TableRow] = []
+    let rows: [TableRow]
 }
